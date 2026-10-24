@@ -56,5 +56,5 @@ jobs:
 
       # No --ignore entries. Every advisory reaching this level has a patched
       # version, so the answer is a bump, not a suppression.
-      - name: Audit production dependencies (high+critical)
-        run: bun audit --audit-level=high --prod
+      - name: Audit all dependencies (high+critical)
+        run: bun audit --audit-level=high
