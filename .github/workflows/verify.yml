@@ -58,3 +58,8 @@ jobs:
       # version, so the answer is a bump, not a suppression.
       - name: Audit production dependencies (high+critical)
         run: bun audit --audit-level=high --prod
+
+      # No --prod: audit the complete root bun.lock graph, including
+      # devDependencies used by the documentation build.
+      - name: Audit full lockfile (high+critical)
+        run: bun audit --audit-level=high
